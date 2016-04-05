@@ -57,10 +57,19 @@ describe("SpareBalloons",function(){
 });
 describe("Popped",function(){
   it("should return the number of people who wont have balloons",function(){
-    var result =  balloon.popped([ { quantity: 12, balloon: 'red' },
+    var result =  balloon.popped("5 red balloons, 1 blue balloon, and 3 yellow balloons popped");
+    assert.equal(result,4
+);
+  });
+});
+describe("balloons",function(){
+  it("should return the color of balloons with the most and the least",function(){
+    var result =  balloon.balloons([ { quantity: 12, balloon: 'red' },
   { quantity: 9, balloon: 'blue' },
-  { quantity: 9, balloon: 'yellow' } ]);
-    assert.equal(result,""
+  { quantity: 9, balloon: 'yellow' } ],[ { amountPopped: 5, balloon: 'red' },
+  { amountPopped: 1, balloon: 'blue' },
+  { amountPopped: 3, balloon: 'yellow' } ]);
+    assert.equal(result,'Most: blue\nLeast: yellow'
 );
   });
 });
