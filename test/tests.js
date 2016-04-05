@@ -2,7 +2,7 @@ var assert = require('assert');
 var balloon = require("../balloon");
 
 describe("processingOrders",function(){
-  it("should",function(){
+  it("should return a map of the orders for each balloon",function(){
     var result =  balloon.processingOrders("4 sets of red, 3 sets of blue, and 3 sets of yellow");
     assert.deepEqual(result,[ { quantity: 12, balloon: 'red' },
   { quantity: 9, balloon: 'blue' },
@@ -20,7 +20,7 @@ describe("processingPrices",function(){
   });
 });
 describe("balloonCost",function(){
-  it("should",function(){
+  it("should return the cost of each set of balloons",function(){
     var result =  balloon.balloonCost([ { quantity: 12, balloon: 'red' },
   { quantity: 9, balloon: 'blue' },
   { quantity: 9, balloon: 'yellow' } ],[ { price: 4, balloon: 'red' },
@@ -34,7 +34,7 @@ describe("balloonCost",function(){
 });
 
 describe("heliumCost",function(){
-  it("should",function(){
+  it("should return the extra cost for helium",function(){
     var result =  balloon.heliumCost([ { quantity: 12, balloon: 'red' },
   { quantity: 9, balloon: 'blue' },
   { quantity: 9, balloon: 'yellow' } ]);
@@ -42,6 +42,25 @@ describe("heliumCost",function(){
   { helium: 18, balloon: 'blue' },
   { helium: 18, balloon: 'yellow' } ]
 
+);
+  });
+});
+describe("SpareBalloons",function(){
+  it("should return the number of spare balloons if any.",function(){
+    var result =  balloon.spareBalloons([ { quantity: 12, balloon: 'red' },
+  { quantity: 9, balloon: 'blue' },
+  { quantity: 9, balloon: 'yellow' } ]);
+    assert.equal(result,"spare balloons: 5"
+
+);
+  });
+});
+describe("Popped",function(){
+  it("should return the number of people who wont have balloons",function(){
+    var result =  balloon.popped([ { quantity: 12, balloon: 'red' },
+  { quantity: 9, balloon: 'blue' },
+  { quantity: 9, balloon: 'yellow' } ]);
+    assert.equal(result,""
 );
   });
 });

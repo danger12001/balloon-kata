@@ -49,3 +49,16 @@ for(x=0;x<orderMap.length;x++){
 // console.log(heliumCost);
 return heliumCost;
 };
+exports.spareBalloons = function(orderMap){
+var people = 25;
+var totalBalloons = orderMap[0].quantity + orderMap[1].quantity + orderMap[2].quantity;
+
+if(totalBalloons > people){
+  return "spare balloons: " + (totalBalloons - people);
+}
+else {return "no Spare balloons";
+}
+};
+exports.popped = function(orderMap){
+
+};
